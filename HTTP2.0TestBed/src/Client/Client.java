@@ -13,7 +13,6 @@ public class Client {
      * @param args
      * @throws InterruptedException
      */
-    public static boolean isVBR = false;
     public static void main(String[] args) throws InterruptedException, IOException {
         ExcelExporter excelExporter = new ExcelExporter();
         double maxDurationInSeconds = GenerateScript.createScript(Manifest.SERVER_ADDRESS, "VBR\\bandwidth.txt", 0, 599);
@@ -33,7 +32,7 @@ public class Client {
 		//AdaptationLogic adaptationLogic = new ThangAlgorithm(buffer, new Manifest());
         //AdaptationLogic adaptationLogic = new TrellisHTTP2(buffer, new Manifest());
         
-        AdaptationLogic adaptationLogic = new SDPAlgorithm(buffer, new Manifest()); isVBR = true;
+        AdaptationLogic adaptationLogic = new SDPAlgorithm(buffer, new Manifest());
         
 		//AdaptationLogic adaptationLogic = new ThangCostFunctionAlgorithm(buffer, new Manifest());
         //AdaptationLogic adaptationLogic = new ThangVariableThresholdAlgorithm(buffer, new Manifest());

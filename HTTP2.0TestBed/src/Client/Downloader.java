@@ -110,9 +110,6 @@ public class Downloader implements Runnable {
             //byte *8 /1000 = kilo bit, downloadTime (milisecond) /1000 = second ====> Kbps kilobit per second
             info.put("throughput", (double) (size * decision.numberOfSegment * 8) / (downloadTime + rtt));
             info.put("bitrate", (double) decision.bitrate);
-            if(Client.isVBR){
-            	info.put("version", (double) SDPAlgorithm.getSelectedVersion());
-            }
 			info.put("buffer", buffer.getBufferSize() / 1000.0);
             info.put("numberOfSegments", (double) decision.numberOfSegment);            
             info.put("size", (double) size);
